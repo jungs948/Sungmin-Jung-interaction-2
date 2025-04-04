@@ -1,12 +1,79 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Your Name Here</title>
-  
-  </head>
-  <body>
-  
-  </body>
-  </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Cocktails | 과일 칵테일 찾기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1b1b1b;
+            --accent-color: #f3a950;
+            --text-color: #f5f5f5;
+            --card-bg: rgba(25, 25, 25, 0.8);
+            --overlay: rgba(0, 0, 0, 0.7);
+        }
+        <header>
+            <h1>Choose Your Cocktails</h1>
+            <h2>Discover delicious fruit cocktails from A to Z</h2>
+        </header>
+       
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="alphabet-input" class="search-input" placeholder="Enter a letter (A-Z)" maxlength="1">
+                <button id="search-btn" class="search-btn">Search</button>
+            </div>
+           
+            <div class="alphabet-nav" id="alphabet-nav">
+                <!-- Will be populated by JavaScript -->
+            </div>
+           
+            <div id="error-message" class="error-message">
+                Please enter a valid letter (A-Z)
+            </div>
+        </section>
+       
+        <section class="results-section">
+            <div id="result-container" class="result-container">
+                <div class="result-header">
+                    <div id="result-letter" class="result-letter">A</div>
+                    <div class="result-title">
+                        <h3 id="fruit-name">Apple</h3>
+                        <p id="cocktail-name">Apple Martini</p>
+                    </div>
+                </div>
+               
+                <div class="result-content">
+                    <div class="result-image">
+                        <img id="cocktail-image" src="https://i.pinimg.com/736x/11/ff/71/11ff71ca217b6eac423548b013c55f12.jpg" alt="Apple Martini">
+                    </div>
+                    <div class="result-details">
+                        <p id="cocktail-description" class="result-description">
+                            A sophisticated cocktail combining vodka with fresh apple liqueur for a crisp, refreshing flavor. Served in a chilled martini glass and garnished with a thin apple slice.
+                        </p>
+                        <a href="#" class="result-btn">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+           
+            <div id="default-message" class="default-message">
+                <p>Enter a letter or select from the alphabet to discover amazing fruit cocktails</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Fruit and cocktail data by alphabet
+        const fruitData = {
+            A: {
+                name: "Apple",
+                cocktail: "Apple Martini",
+                desc: "A sophisticated cocktail combining vodka with fresh apple liqueur for a crisp, refreshing flavor. Served in a chilled martini glass and garnished with a thin apple slice.",
+                image: "https://i.pinimg.com/736x/11/ff/71/11ff71ca217b6eac423548b013c55f12.jpg"
+            },
+        });
+    </script>
+</body>
+</html>
