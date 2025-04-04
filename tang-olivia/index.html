@@ -1,12 +1,102 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Your Name Here</title>
-  
-  </head>
-  <body>
-  
-  </body>
-  </html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tang Olivia Quiz</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Recursive:slnt,wght@-15..0,300..1000&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #E3DCD2; 
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .name {
+      display: flex;
+      gap: 2vw;
+      flex-wrap: wrap;
+    }
+
+    .letter {
+      font-family: 'Recursive', sans-serif;
+      font-size: 15vw;
+      color: #5C5A58;
+      transition: all 0.3s ease;
+      user-select: none;
+      cursor: pointer;
+      --weight: 400;
+      font-variation-settings: "wght" var(--weight), "slnt" 0;
+    }
+
+    .letter:hover {
+      color: #8C8278;
+      transform: scale(1.1) rotate(-5deg);
+      --weight: 700;
+      font-variation-settings: "wght" var(--weight), "slnt" -10;
+    }
+
+    .letter.clicked {
+      animation: bounce 0.5s ease;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      30% { transform: translateY(-30px); }
+      60% { transform: translateY(10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .letter {
+        font-size: 12vw;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .letter {
+        font-size: 15vw;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .letter {
+        font-size: 20vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="name">
+    <span class="letter">O</span>
+    <span class="letter">L</span>
+    <span class="letter">I</span>
+    <span class="letter">V</span>
+    <span class="letter">I</span>
+    <span class="letter">A</span>
+  </div>
+
+  <script>
+    const letters = document.querySelectorAll('.letter');
+
+    letters.forEach(letter => {
+      letter.addEventListener('click', () => {
+        letter.classList.add('clicked');
+        setTimeout(() => {
+          letter.classList.remove('clicked');
+        }, 500);
+      });
+    });
+  </script>
+
+</body>
+</html>
